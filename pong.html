@@ -1,0 +1,52 @@
+<!-- 
+    - In body part, <center> is added to shift the whole thing in body to center
+    - new paragraph (<p>) is added for instructions, and all instructions are listed as unordered list <ul>
+        - each point is written in one list item point <li>
+    - new paragraph (<p>) is added with id 'start' to display the start message
+        - start message will be replaced with restart message in pong.ts if conditions are met
+    - table (<table>) is added to store score in a neat order
+        in the table, scores are stored with id score1 and score2 so that it could be updated later in pong.ts
+    - winMessage is added to display a Message when either computer or player wins the game 
+-->
+
+<html>
+    <head>
+        <style>
+            @import url(style.css);
+            p.highlight {
+                color: red;
+            }
+            svg {
+                background-color: rgb(41, 41, 36);
+            }
+        </style>
+        <script src="svgelement.js"></script>
+        <script src="observable.js"></script>
+        <script src="pong.js"></script>
+    </head>
+    <body>
+        <center><h1>Pong</h1>
+        <p>Instructions:
+            <ul style="list-style-type:none">
+                <li>Mouse click on green paddle on the right to control the paddle</li>
+                <li>An orange brick will be placed randomly on the wall.</li>
+                <li>Bonus mark will be granted when you hit on the brick!</li>
+                <li>Earn 11 scores to win!</li>
+            </ul>
+        </p>
+        <p id='start'>Click on the ball to start</p>
+        <table align = "center">
+            <tr>
+                <th>Computer : </th>
+                <th>Player</th>
+        </tr>
+        <tr>
+            <th id="score1">0</th>
+            <th id="score2">0</th>
+        </tr>
+        </table>
+        <h2 id= "winMessage"></h2>
+        <svg id="canvas" width="600" height="600"/></center>
+        
+    </body>
+</html>
